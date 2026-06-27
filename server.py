@@ -22,7 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 # Server init
 # ---------------------------------------------------------------------------
 
-mcp = FastMCP("trello_mcp", port=int(os.environ.get("PORT", 8000)))
+mcp = FastMCP("trello_mcp", host="0.0.0.0", port=int(os.environ.get("PORT", 8000)))
 
 # ---------------------------------------------------------------------------
 # Constants
