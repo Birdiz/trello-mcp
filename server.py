@@ -26,8 +26,6 @@ mcp = FastMCP(
     "trello_mcp",
     host="0.0.0.0",
     port=int(os.environ.get("PORT", 8000)),
-    stateless_http=True,
-    json_response=True,
 )
 
 # ---------------------------------------------------------------------------
@@ -791,6 +789,6 @@ async def trello_assign_member_to_card(params: AssignMemberInput) -> str:
 
 if __name__ == "__main__":
     if os.environ.get("PORT"):
-        mcp.run(transport="streamable-http")
+        mcp.run(transport="sse")
     else:
         mcp.run()
