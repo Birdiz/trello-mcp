@@ -22,7 +22,8 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 # Server init
 # ---------------------------------------------------------------------------
 
-mcp = FastMCP("trello_mcp")
+import os as _os
+mcp = FastMCP("trello_mcp", port=int(_os.environ.get("PORT", 8000)))
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -784,11 +785,7 @@ async def trello_assign_member_to_card(params: AssignMemberInput) -> str:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    import os
-    port = int(os.environ.get("PORT", 8000))
-    # Use streamable HTTP when PORT is set (remote/Railway deployment)
-    # Fall back to stdio for local use
-    if os.environ.get("PORT"):
-        mcp.run(transport="streamable-http", port=port)
+    if _os.environ.get("PORT"):
+        mcp.run(transport="streamable-http")
     else:
         mcp.run()
