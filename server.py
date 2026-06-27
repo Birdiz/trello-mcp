@@ -22,8 +22,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator
 # Server init
 # ---------------------------------------------------------------------------
 
-import os as _os
-mcp = FastMCP("trello_mcp", port=int(_os.environ.get("PORT", 8000)))
+mcp = FastMCP("trello_mcp", port=int(os.environ.get("PORT", 8000)))
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -785,7 +784,7 @@ async def trello_assign_member_to_card(params: AssignMemberInput) -> str:
 # ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    if _os.environ.get("PORT"):
+    if os.environ.get("PORT"):
         mcp.run(transport="streamable-http")
     else:
         mcp.run()
