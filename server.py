@@ -789,6 +789,6 @@ if __name__ == "__main__":
     # Use streamable HTTP when PORT is set (remote/Railway deployment)
     # Fall back to stdio for local use
     if os.environ.get("PORT"):
-        mcp.run(transport="streamable-http", host="0.0.0.0", port=port)
+        mcp.run(transport="streamable-http", port=port)
     else:
         mcp.run()
