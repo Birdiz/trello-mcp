@@ -4,16 +4,16 @@ Suis ces étapes une seule fois. Ensuite, tu pourras demander à Claude de crée
 
 ---
 
-## Étape 1 — Ouvrir les paramètres de Cowork
+## Étape 1 — Ouvrir la personnalisation
 
-Dans l'application Cowork, clique sur **Settings** (icône engrenage).
+Dans l'application Cowork, clique sur **Customize**.
 
 ---
 
 ## Étape 2 — Ajouter le serveur Trello
 
-1. Va dans la section **MCP Servers**
-2. Clique sur **Add Server**
+1. Va dans la section **Connectors**
+2. Clique sur **+**
 3. Colle cette URL :
 
 ```
